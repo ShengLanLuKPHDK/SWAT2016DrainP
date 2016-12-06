@@ -47,11 +47,14 @@
       rchrg1 = 0.
       rchrg1 = gwseep
 
+      gwseep1 = gwseep*GWL
+      gw_qdeep(j) = gw_qdeep(j) * alpha_bfe_d(j) + (gwseep- gwseep1)*  
+     &                                         (1. - alpha_bfe_d(j))
 
 !! compute groundwater contribution to streamflow for day (deep aquifer)
 !      if (shallst(j) > gwqmn(j)) then
-        gw_qdeep(j) = gw_qdeep(j) * alpha_bfe_d(j) + gwseep *           
-     &                                         (1. - alpha_bfe_d(j))
+ !       gw_qdeep(j) = gw_qdeep(j) * alpha_bfe_d(j) + gwseep *           
+ !    &                                         (1. - alpha_bfe_d(j))
  !     else
  !       gw_qdeep(j) = 0.
  !     end if
@@ -59,6 +62,10 @@
 
 !! remove ground water flow from deep aquifer storage
       deepst(j) = deepst(j) - gw_qdeep(j)
+      
+
+
+
 
       return
       end
