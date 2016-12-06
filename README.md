@@ -1,2 +1,2 @@
-# SWAT2016DrainP
-Extensions to SWAT2016 to simulate soluble reactive phosphorus transport from tile drained fields to rivers
+# SWATrev622
+Macropore and Macrophyte module development was carried out based on rev622
