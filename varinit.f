@@ -328,5 +328,13 @@
         hhsedy = 0.
         ubntss = 0.
 
+!! macrophyte growth module
+       gwseep1 = 0.
+       grow_biomass = 0.
+       depp = 0.
+       depn = 0.
+       resp = 0.
+       resn = 0.
+
        return
        end

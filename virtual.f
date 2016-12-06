@@ -531,9 +531,13 @@
          varoute(2,ihout) = sub_wyld(sb) * sub_ha * 10.  !!qdr m3/d
          varoute(3,ihout) = sub_sedy(sb)                 !!sedyld
          varoute(4,ihout) = sub_yorgn(sb) * sub_ha       !!sedorgn
+!! S.Lu track orgP, sediment inorganic p seperately
          varoute(5,ihout) = (sub_yorgp(sb) + sub_sedps(sb) +
      &                  sub_sedpa(sb)) * sub_ha          !!sedorgp & sedminps
                                                   !!sedorgp & sedminps
+!         varoute(5,ihout) = sub_yorgp(sb) * sub_ha
+!         varoute(34,ihout) = (sub_sedps(sb) +sub_sedpa(sb))* sub_ha
+!!end
          varoute(6,ihout) = (sub_no3(sb) + sub_latno3(sb) +             
      &      sub_tileno3(sb) + sub_gwno3(sb)) * sub_ha          !!surqno3 & latno3 & no3gw
          varoute(7,ihout) = (sub_solp(sb) + sub_gwsolp(sb)) * sub_ha   !!surqsolp & minpgw & sedminpa

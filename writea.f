@@ -210,6 +210,11 @@
      &            wshdyro(42), wshdyro(45), wshdyro(46), wshdyro(44),   
      &            wshdyro(40), wshdyro(43), wshdyro(41), wshdyro(111)
           endif
+!!print out annual results for 
+!      write(80000,4446) iyr,wshdyro(3), wshdyro(104) ,wshdyro(106),     &
+!     &wshdyro(4),wshdyro(6) ,wshdyro(7) !,wshdyro(47),wshdyro(53),        &
+ !    &wshdyro(49)  !&
+! 4446 format(i0,6e14.3)
 
           !!write channel degradation data (chan.deg)
           if (ideg == 1) then 

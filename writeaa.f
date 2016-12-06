@@ -556,6 +556,11 @@
 !! write average annual summary tables in standard output file (.std)
       call stdaa
 
+      write(80000,4446)     wshdaao(3), wshdaao(104) ,wshdaao(113),     &
+     &wshdaao(4),wshdaao(6) ,wshdaao(7) !,wshdyro(47),wshdyro(53),      &
+ !    &wshdyro(49)  !&
+ 4446 format(6e14.3)
+
 !! write average annual forecast table
       if (ffcst == 1 .and. fcstcnt > 0) then
         write (18,*) iscen, (fcstaao(j), j = 1, 16)

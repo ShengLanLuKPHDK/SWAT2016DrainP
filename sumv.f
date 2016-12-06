@@ -589,7 +589,8 @@
 
         wshddayo(104) = wshddayo(104) + gw_q(j) * hru_dafr(j)
         wshddayo(105) = wshddayo(105) + revapday * hru_dafr(j)
-        wshddayo(106) = wshddayo(106) + gwseep * hru_dafr(j)
+ !       wshddayo(106) = wshddayo(106) + gwseep * hru_dafr(j)
+        wshddayo(106) = wshddayo(106) + gwseep1 * hru_dafr(j)
         wshddayo(107) = wshddayo(107) + rchrg(j) * hru_dafr(j)
         wshddayo(108) = wshddayo(108) + pet_day * hru_dafr(j)
         wshddayo(109) = wshddayo(109) + qtile * hru_dafr(j)

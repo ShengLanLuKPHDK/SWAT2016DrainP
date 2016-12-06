@@ -420,6 +420,12 @@
          chlora(jrch) = algae(jrch) * ai0 / 1000.
          !! end algal growth 
 
+!! instream macrophyte growth calculations S.Lu 15/Sep/2014
+!      if(imacrophyte == 1) then
+!         call bedsediment
+!         call macrophyte
+!      endif
+
 !! oxygen calculations
          !! calculate carbonaceous biological oxygen demand at end
          !! of day QUAL2E section 3.5 equation III-26
@@ -568,8 +574,8 @@
         yy = 0.
         zz = 0.
         xx = ai2 * Theta(rhoq,thrho,wtmp) * algcon
-        yy = Theta(bc4(jrch),thbc4,wtmp) * orgpcon
-        zz = Theta(rs5(jrch),thrs5,wtmp) * orgpcon
+        yy = Theta(bc4(jrch),thbc4,wtmp) * orgpcon  ! deposition
+        zz = Theta(rs5(jrch),thrs5,wtmp) * orgpcon  
         organicp(jrch) = 0.
         organicp(jrch) = orgpcon + (xx - yy - zz) * tday
         if (organicp(jrch) < 1.e-6) organicp(jrch) = 0.
