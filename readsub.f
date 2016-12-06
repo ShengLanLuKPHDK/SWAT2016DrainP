@@ -378,7 +378,11 @@
 !!      endif
       
 !!    set default values
-      do ihru = jj, hrutot(i)
+!!S.Lu changed so that resign of the values works for all subbasins
+!      do ihru = jj, hrutot(i)
+      do j = jj, hrutot(i)
+          ihru = 0
+          ihru = nhru + j
         if (re(ihru) <= 0.) re(ihru) = re_bsn
 	  if (sdrain(ihru) <= 0.) sdrain(ihru) = sdrain_bsn
 	  if (drain_co(ihru) <= 0.) drain_co(ihru) = drain_co_bsn

@@ -104,7 +104,7 @@
      *        "   FERT", phubase(j), phuacc(j), sol_sw(j),bio_ms(j), 
      *        sol_rsd(1,j), sol_sumno3(j),sol_sumsolp(j),frt_kg,
      *        fertno3, fertnh3, fertorgn, fertsolp, fertorgp
-1004  format (a5,1x,a4,3i6,2a15,7f10.2,20x,f10.2,10x,5f10.2)
+1004  format (a5,1x,a4,3i6,2a15,7f10.2,20x,e10.2,10x,5e10.2)
             endif
             
    
