@@ -571,6 +571,13 @@
         end if
       end do
 
+!!S.Lu  write average annual results for budget
+!      write(8888,4000)wshdaao(3), wshdaao(4),wshdaao(113),wshdaao(104)
+!     & ,wshdaao(109),wshdaao(6),wshdaao(7),wshdaao(108)
+      write(8888,4000) wshdaao(47), wshdaao(48),wshdaao(49),wshdaao(50)
+     & ,wshdaao(109),wshdaao(3),wshdaao(4)
+4000  format (7e14.7)
+
       return
  5500 format ("Average Annual Loadings")
  5600 format (1x,a5,a4,1x,f4.0,4x,1x,250(e16.4,1x))

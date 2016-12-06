@@ -78,6 +78,9 @@
           pst_lag(k,3,j) = (pst_lag(k,3,j) * decay_s(npno(k)))          
      &                     + lat_pst(k)
           ! pst_lag(k,3,j) = pst_lag(k,3,j) + lat_pst(k)
+          !S.Lu for pesticide in tile drains
+          pst_lag(k,4,j) = (pst_lag(k,4,j) * decay_s(npno(k)))          
+     &                     + tilepst(k,j)
         end do
       end if
 
@@ -88,10 +91,14 @@
       if (latq(j) < 1.e-6) latq(j) = 0.
       if (latno3(j) < 1.e-6) latno3(j) = 0.
       if (qtile < 1.e-6) qtile = 0.
+      !S.Lu for pesticide in tile drains
+      tileq(j) = qtile
       if (tileno3(j) < 1.e-6) tileno3(j) = 0.
       if (hrupest(j) == 1) then
         do k = 1, npmx
           lat_pst(k) = pst_lag(k,3,j) * lat_ttime(j)
+          !S.Lu for pesticide in tile drains
+          tilepst(k,j) = pst_lag(k,4,j) * tile_ttime(j)
         end do
       end if
 
@@ -102,6 +109,8 @@
       if (hrupest(j) == 1) then
         do k = 1, npmx
           pst_lag(k,3,j) = pst_lag(k,3,j) - lat_pst(k)
+          !S.Lu for pesticide in tile drains
+          pst_lag(k,4,j) = pst_lag(k,4,j) - tilepst(k,j)
         end do
       end if
 
