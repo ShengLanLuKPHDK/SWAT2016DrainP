@@ -172,7 +172,10 @@
         pdvar(26) = rchmono(19,j)  !!solpst in (mg pst)
         pdvar(27) = rchmono(20,j)  !!solpst out (mg pst)
         pdvar(28) = rchmono(21,j)  !!srbpst in (mg pst)
-        pdvar(29) = rchmono(22,j)  !!srbpst out (mg pst)
+ !! S.Lu for both particulate and soluble pesticide 
+!        pdvar(29) = rchmono(22,j)  !!srbpst out (mg pst)
+        pdvar(29) = rchmono(22,j) + rchmono(20,j) !!srbpst+solpstout (mg pst)
+ !! S.Lu for both particulate and soluble pesticide 
         pdvar(30) = rchmono(23,j)  !!reacted pst (mg pst)
         pdvar(31) = rchmono(24,j)  !!volatilized pst (mg)
         pdvar(32) = rchmono(25,j)  !!pst settling (mg pst)

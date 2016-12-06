@@ -765,6 +765,10 @@
      & '(kg/ha)','(kg/ha)','(mg/l)'
 
       close (101)
+!! S.Lu desired results
+      open (8888,file='variable.txt', position = 'append')
+!!S.Lu desired results
+
       return
 
  1010 format (32x,'SNOW(mm) at ELEVATION BAND (1-10)',/,                

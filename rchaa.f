@@ -179,7 +179,10 @@
         pdvar(26) = rchaao(19,j)     !!solpst in (mg pst)
         pdvar(27) = rchaao(20,j)     !!solpst out (mg pst)
         pdvar(28) = rchaao(21,j)     !!srbpst in (mg pst)
-        pdvar(29) = rchaao(22,j)     !!srbpst out (mg pst)
+!! S.Lu for both particulate and soluble pesticide
+!        pdvar(29) = rchaao(22,j)     !!srbpst out (mg pst)
+        pdvar(29) = rchaao(22,j) + rchaao(20,j) !!srbpst+solpst out (mg pst)
+!! S.Lu for both particulate and soluble pesticide
         pdvar(30) = rchaao(23,j)     !!reacted pst (mg pst)
         pdvar(31) = rchaao(24,j)     !!volatilized pst (mg)
         pdvar(32) = rchaao(25,j)     !!pst settling (mg pst)

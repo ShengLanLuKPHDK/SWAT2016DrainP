@@ -175,7 +175,10 @@
         pdvar(26) = rchyro(19,j)     !!solpst in (mg pst)
         pdvar(27) = rchyro(20,j)     !!solpst out (mg pst)
         pdvar(28) = rchyro(21,j)     !!srbpst in (mg pst)
-        pdvar(29) = rchyro(22,j)     !!srbpst out (mg pst)
+!! S.Lu for both particulate and soluble pesticide
+!        pdvar(29) = rchyro(22,j)     !!srbpst out (mg pst)
+        pdvar(29) = rchyro(22,j) + rchyro(20,j) 
+!! S.Lu for both particulate and soluble pesticide
         pdvar(30) = rchyro(23,j)     !!reacted pst (mg pst)
         pdvar(31) = rchyro(24,j)     !!volatilized pst (mg)
         pdvar(32) = rchyro(25,j)     !!pst settling (mg pst)

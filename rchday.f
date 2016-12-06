@@ -156,9 +156,12 @@
         pdvar(24) = rchdy(24,j)     !!dis O2 in (kg)
         pdvar(25) = rchdy(25,j)     !!dis O2 out (kg)
         pdvar(26) = rchdy(26,j)     !!solpst in (mg pst)
-        pdvar(27) = rchdy(27,j)     !!solpst out (mg pst)
+        pdvar(27) = rchdy(27,j)/rtwtr*1e3      !!solpst out (mg pst)
         pdvar(28) = rchdy(28,j)     !!srbpst in (mg pst)
-        pdvar(29) = rchdy(29,j)     !!srbpst out (mg pst)
+ !! S.Lu for both particulate and soluble pesticide 
+ !       pdvar(29) = rchdy(29,j)     !!srbpst out (mg pst)
+        pdvar(29) = (rchdy(29,j) + rchdy(27,j))/rtwtr*1e3     !!srbpst + solpstout (ngl-1)
+ !! S.Lu for both particulate and soluble pesticide
         pdvar(30) = rchdy(30,j)     !!reacted pst (mg pst)
         pdvar(31) = rchdy(31,j)     !!volatilized pst (mg)
         pdvar(32) = rchdy(32,j)     !!pst settling (mg pst)
