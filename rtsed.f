@@ -113,7 +113,7 @@
       if (vc > 5.) vc = 5.
 
       tbase = ch_l2(jrch) * 1000. / (3600. * 24. * vc)
-      tbase = prf
+!      tbase = prf
 
       if (tbase > 1.) tbase = 1.
 
@@ -193,7 +193,8 @@
       rchdy(58,jrch) = 0.
 !!    Total suspended sediments
 	rchdy(59,jrch) = sedrch / rtwtr * 1.e6
-
+!! resuspention
+      rchdy(61,jrch) = deg1 + deg2
 !!    Organic nitrogen and Organic Phosphorus contribution from channel erosion
 !!    ch_orgn(jrch) = deg2 * ch_onco(jrch) * 1000.
 !!    ch_orgp(jrch) = deg2 * ch_opco(jrch) * 1000.
@@ -242,9 +243,16 @@
 !!resuspnesion SL 9-12/14
       rchdy(61,jrch) = 0.
 
+
 	endif !! end of qdin > 0.01 loop
 
       endif  !! end of rtwtr and rchdep > 0 loop
+
+!      if (jrch==1.and. curyr > nyskip ) then
+!      write(80000,4000) vc,depnet,rchdy(61,jrch),deg1,dep,       
+!     &sedrch, Tbank, Tbed,rchdep,ch_n(2,jrch)  
+!      endif
+!4000  format(11e14.4)
 
       return
       end

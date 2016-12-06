@@ -212,7 +212,13 @@
         if (iwq == 1) call hhwatqual
         if (iwq == 0) call hhnoqual
       end if
-
+!      print*, organicn(jrch)
+!! instream macrophyte growth calculations S.Lu 15/Sep/2014
+      if(ievent < 3 .and. imacrophyte == 1) then
+         call macrophyte
+         call bedsediment
+      endif
+!      print*, organicn(jrch)
 !! perform in-stream pesticide calculations
 !!      call biofilm
       

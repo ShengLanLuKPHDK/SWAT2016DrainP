@@ -154,7 +154,9 @@
   	    vc = sdti / rcharea  
         vel_chan(jrch) = vc
 	  rttime = ch_l2(jrch) * 1000. / (3600. * vc)
-
+      !!for macrophyte growth
+        rh_rch(jrch) = rh
+      !!for macrophyte growth
 
         !! calculate volume of water leaving reach on day
         scoef = 0.
@@ -258,7 +260,8 @@
         flwin(jrch) = 0.
         flwout(jrch) = 0.
       end if
-
+!      if (jrch==1) write(80000,*) jrch,sdti,vc,rchdep        
+      
 !! precipitation on reach is not calculated because area of HRUs 
 !! in subbasin sums up to entire subbasin area (including channel
 !! area) so precipitation is accounted for in subbasin loop

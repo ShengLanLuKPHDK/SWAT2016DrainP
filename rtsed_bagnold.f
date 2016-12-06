@@ -517,10 +517,11 @@
 !!    Total suspended sediments (only silt and clay)
 	rchdy(59,jrch) = (rch_sil + rch_cla)/rtwtr * 1.e6
 
-!! resuspention
-      rchdy(61,jrch) = deg1
-
-
+!! resuspention and erosion
+      rchdy(61,jrch) = deg1 + degrte + bnkrte
+ !     if (jrch==1) write(80000,4000) vc,depnet,rchdy(61,jrch),deg1,dep, &
+ !    &sedrch, Tbank, Tbed,rchdep,ch_n(2,jrch)  
+!4000  format(10e14.5)
 
 !!    Deposition during the previous time step
       depprch(jrch) = depch(jrch)  !! Channel
@@ -565,6 +566,10 @@
 	end if !! end of qdin > 0.01 loop
 
       end if  !! end of rtwtr and rchdep > 0 loop
-
+!      if (jrch==1.and. curyr > nyskip ) then
+!      write(80000,4000) vc,depnet,rchdy(61,jrch),deg1,dep,       
+!     &sedrch, Tbank, Tbed,rchdep,ch_n(2,jrch)  
+!      endif
+!4000  format(11e14.4)
       return
       end

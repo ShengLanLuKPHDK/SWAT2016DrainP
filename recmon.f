@@ -147,8 +147,6 @@
       varoute(27,ihout) = sedmon(inum1,curyr,i_mo) * 0.   ! lag
       varoute(28,ihout) = 0.                    ! gravel
 
-
-
       if (ievent > 2) then
       do ii = 1, nstep
       hhvaroute(2,ihout,ii) = flomon(inum1,curyr,i_mo) / real(nstep)
