@@ -262,7 +262,7 @@
             i = inum1s(idum)
             open (107,file=month_in,recl=350)
             call readmon
-!            print*, month_in,i,idum, inum1s(idum)
+            
             case (8)  !! icode = 8  RECYEAR command: 
                       !! read in average daily loadings for each year
             year_in = ""

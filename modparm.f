@@ -236,6 +236,7 @@
       real, dimension (:), allocatable :: organicn,organicp,chlora
       real, dimension (:), allocatable :: nitraten,nitriten,ch_li,ch_si
 
+
 !      real, dimension (:), allocatable :: ch_cov,ch_di,ch_erod,ch_l2
 !      real, dimension (:), allocatable :: ch_san, ch_sil, ch_cla, ch_veg 
 !      real, dimension (:), allocatable :: ch_rcur, ch_ss, ch_fpr, ch_eqn
@@ -895,6 +896,19 @@
       ! tillage_factor: = 1.6 in 30 days after tillage practices occur; otherwise 1.0;
 !! By Zhang for C/N cycling
 
+!!parameter for macrophyte growth S.Lu 15/Sep/2014
+      real, dimension (:), allocatable :: ma_biomass, grow_biomass
+      real, dimension (:), allocatable :: tppsed,detnsed, nh4sed, no3sed
+      real, dimension (:), allocatable :: srpsed,depp, depn, resp,resn
+      real, dimension (:), allocatable :: k_n_m, k_p_m, SefSma, death
+      real, dimension (:), allocatable :: grmaxm, difpo4, difno3, difnh4
+      real, dimension (:), allocatable :: minrate, nitrate, denirate
+      real, dimension (:), allocatable :: Kd, pfr, nfr, minDeath
+      real, dimension (:), allocatable :: max_biomass,vplant
+      real, dimension (:), allocatable :: ch_n_initial,rh_rch
+      integer :: imacrophyte
+      real :: radmax, gw_lost, gwseep1
+!!end macrophyte growth
 
 
       end module parm

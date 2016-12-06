@@ -134,12 +134,7 @@
      &                            cmtl1mon(i,iya,mon),                  
      &                            cmtl2mon(i,iya,mon),                  
      &                            cmtl3mon(i,iya,mon)
-      !!print for point source sediment 
-       if(i < 6) then 
-      write (1111,4000), i,ia1, ia2, sedmon(i,iya,mon)
-      endif
- 4000 format(i0,1x,i0,1x,i0,1x,2e14.7)        
-        if (eof < 0) exit
+          if (eof < 0) exit
         end do
         if (eof < 0) exit
       end do
@@ -148,5 +143,4 @@
          
       return
  5000 format (a80)
-
       end

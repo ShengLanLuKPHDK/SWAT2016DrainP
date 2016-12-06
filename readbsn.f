@@ -395,7 +395,7 @@
       read (103,1000) titldum
       read (103,*) isubwq
       read (103,1000) titldum
-      read (103,*) wdpq
+      read (103,*) gw_lost  !wdpq
       read (103,*) wgpq
       read (103,*) wdlpq
       read (103,*) wglpq
@@ -562,7 +562,12 @@
       if (eof < 0) exit
       read (103,*,iostat=eof) iroutunit
       if (eof < 0) exit
-	exit
+!Macrophyte growth switch
+      read (103,*,iostat=eof) imacrophyte
+      if (eof < 0) exit	
+      read (103,*,iostat=eof) radmax
+      if (eof < 0) exit
+      exit
 !!    Drainmod input variables - 01/2006
       end do
 

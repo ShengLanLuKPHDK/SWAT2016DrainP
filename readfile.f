@@ -616,7 +616,9 @@
       if (ia_b == 1) then
         open (77777,file = "outputb.rch", form = 'unformatted')
       end if
-      
+
+   
+           
 !!    sediment routing output file
       open (84,file="output.sed",recl=800)
 !! write headings to sediment outputfile (output.sed)
@@ -763,6 +765,10 @@
      & '(mm)','(mm)','(kg/ha)','(kg/ha)','(kg/ha)','(kg/ha)',
      & '(kg/ha)','(kg/ha)','(kg/ha)','(kg/ha)','(kg/ha)',
      & '(kg/ha)','(kg/ha)','(mg/l)'
+
+!! print out desired variables
+      open (80000,file = 'variable.txt', position = 'append')   
+ !     open (80000,file = 'variable.txt')   
 
       close (101)
       return
